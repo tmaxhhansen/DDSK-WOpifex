@@ -211,3 +211,13 @@
 			            
 			        }
 		    });
+				
+			var icon;
+			$('.uidraggable').click(function () {
+			   icon = $(this).clone();
+			 });
+			$("#pad").click(function(e){
+			var x = e.pageX - this.offsetLeft;
+			var y = e.pageY - this.offsetTop;
+			$(icon).css({'left':x + 'px', 'top':y + 'px'}).addClass('clicked').appendTo('#pad');
+			}); 
