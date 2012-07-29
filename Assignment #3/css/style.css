@@ -69,7 +69,8 @@ section#canvas > section#pad{
     height : 95%;
 	background:url(../images/grid_20px.gif);
 	background-repeat:repeat;
-	overflow: hidden;
+	overflow: visible;
+	z-index: 0;
 }
 
 /* canvas */
@@ -236,6 +237,7 @@ section#canvas > section#pad{
 } 
 
 #sbtn {
+	position: absolute;
 	width: 92px;
 	height: 73px;
 	border: 2px solid black;
