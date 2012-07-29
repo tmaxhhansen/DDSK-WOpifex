@@ -188,26 +188,26 @@
 				hide: 'mouseout'
 			});
 			
-			$(function() {
-			    $('.resizeable').draggable({
-			        cursor: 'move',
-			        helper: 'clone',
+			       
+				$('.uidraggable').draggable({
+					cursor: 'move',
+					helper: 'clone',
 			        containment: "#pad", 
 					appendTo: "#pad" 
 					
 			    });
-			    $('#pad').droppable({
-			        accept: '.resizeable',
-			        drop: function(event, ui) {
-					if (!ui.draggable.hasClass("dropped"))
-			                    $(this).append($(ui.draggable).clone().addClass("dropped").draggable());
-			            /*$(this).append(
-			            $(ui.draggable).clone().draggable({containment: "#pad"}).append(
-			            $('<a />').html('remove').attr('href', '#').click(function() {
-			                $(this).parent().remove();
-			            })));*/
+				$('#pad').droppable({
+			        accept: '.uidraggable',
+			        drop: function(event, ui){
+					if (!($(ui.draggable)).hasClass("dropped"))
+					{
+						$(this).append($(ui.draggable).clone().addClass("dropped").draggable({
+						cursor: 'move',
+						containment: "#pad", 
+						appendTo: "#pad" 
+					
+						}));
+					}
+			            
 			        }
-			    });
-			});
-		});
-		
+		    });
