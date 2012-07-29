@@ -221,3 +221,18 @@
 			var y = e.pageY - this.offsetTop;
 			$(icon).css({'left':x + 'px', 'top':y + 'px'}).addClass('clicked').appendTo('#pad');
 			}); 
+			
+			/*
+			$('#pad').click(function(e)
+			{
+			  //getting height and width of the message box
+			  var height = $('#sbtn').height();
+			  var width = $('#sbtn').width();
+			  //calculating offset for displaying popup message
+			  leftVal=e.pageX-(width/2)+"px";
+			  topVal=e.pageY-(height/2)+"px";
+			  //show the popup message and hide with fading effect
+			  $('#sbtn').css({left:leftVal,top:topVal}).appendTo('#pad').addClass('clicked');
+			}); */
+
+		}):
