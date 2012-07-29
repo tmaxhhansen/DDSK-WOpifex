@@ -189,28 +189,31 @@
 			});
 			
 			       
-				$('.uidraggable').draggable({
-					cursor: 'move',
-					helper: 'clone',
-			        containment: "#pad", 
-					appendTo: "#pad" 
-					
-			    });
-				$('#pad').droppable({
-			        accept: '.uidraggable',
-			        drop: function(event, ui){
-					if (!($(ui.draggable)).hasClass("dropped"))
-					{
-						$(this).append($(ui.draggable).clone().addClass("dropped").draggable({
-						cursor: 'move',
-						containment: "#pad", 
-						appendTo: "#pad" 
-					
-						}));
-					}
-			            
-			        }
+			$('.uidraggable').draggable({
+				cursor: 'move',
+				helper: 'clone',
+		        containment: "#pad", 
+				appendTo: "#pad" 
+				
 		    });
+			$('#pad').droppable({
+		        accept: '.uidraggable',
+		        drop: function(event, ui){
+				
+				var elem = $(ui.helper).clone();
+				var n = $(elem).attr('class');
+				//alert(n);
+				$(this).append($(elem));
+		                $(elem).addClass("item");
+		                $(".item").removeClass("ui-draggable");
+						$(".item").removeClass("uidraggable");
+		                $(".item").draggable({
+								cursor: 'move',
+								containment: '#pad'
+		                        
+		                });
+				}
+				 });  //this code fixed the auto-left positioning of dropped element
 				
 			var icon;
 			$('.uidraggable').click(function () {
