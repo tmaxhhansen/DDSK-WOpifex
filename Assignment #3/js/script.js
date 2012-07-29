@@ -215,7 +215,7 @@
 				}
 				 });  //this code fixed the auto-left positioning of dropped element
 				
-			var icon;
+		/*	var icon;
 			$('.uidraggable').click(function () {
 			   icon = $(this).clone();
 			 });
@@ -223,7 +223,7 @@
 			var x = e.pageX - this.offsetLeft;
 			var y = e.pageY - this.offsetTop;
 			$(icon).css({'left':x + 'px', 'top':y + 'px'}).addClass('clicked').appendTo('#pad');
-			}); 
+			});  */
 			
 			/*
 			$('#pad').click(function(e)
@@ -238,4 +238,4 @@
 			  $('#sbtn').css({left:leftVal,top:topVal}).appendTo('#pad').addClass('clicked');
 			}); */
 
-		}):
+		});
