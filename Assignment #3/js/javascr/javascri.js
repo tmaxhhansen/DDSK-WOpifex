@@ -1,5 +1,46 @@
 $(document).ready(function() {    
-//start     
+//start 
+	
+	$(".uidraggable").click(function(){
+		//alert("click");
+		var elem;
+		if($(this).hasClass(".item")){
+		elem = $(this).removeClass("uidraggable").draggable();
+		$(this).unbind('click').removeClass("uidraggable");
+		$(elem).unbind('click').removeClass("uidraggable");
+		}
+		if(!($(this).hasClass(".item"))){
+		elem = $(this).clone().removeClass("uidraggable");
+		$(elem).addClass("item").draggable();
+		$(this).unbind('click');
+		$(elem).unbind('click');
+		}
+		$("#pad").dblclick(function(e){
+		 //alert("clickagain");
+		 var x = e.pageX - this.offsetLeft;
+		 var y = e.pageY - this.offsetTop;
+		 $(elem).css({ left: x, top: y }).appendTo('#pad');
+		 $(this).unbind('dblclick');
+		});
+		}); 
+
+		$(".item").click(function(){
+		//alert("click");
+		var elem;
+		if($(this).hasClass(".item")){
+		elem = $(this).draggable("destroy").removeClass("uidraggable").draggable();
+		$(this).unbind('click');
+		$(elem).unbind('click');
+		}
+		$("#pad").dblclick(function(e){
+		 //alert("clickagain");
+		 var x = e.pageX - this.offsetLeft;
+		 var y = e.pageY - this.offsetTop;
+		 $(elem).css({ left: x, top: y }).appendTo('#pad');
+		 $(this).unbind('dblclick');
+		}); 
+		}); 
+	
 	var counter = 0;
 	$('.uidraggable').draggable({
 		cursor: 'move',
