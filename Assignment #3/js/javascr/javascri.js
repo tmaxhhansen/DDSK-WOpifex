@@ -145,8 +145,10 @@ $(document).ready(function() {
 	});
 	
 	$(".icon-bold").click(function(){
-		
-	})
+		alert(element_container);
+		alert(element_container.children());
+		$(element_container).css("Font-Weight","Bold");
+	});
 	
 	
 }); 
