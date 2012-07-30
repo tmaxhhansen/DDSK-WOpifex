@@ -148,6 +148,7 @@ $(document).ready(
 				$('#inbox_height').val(0);
 				$('#inbox_x').val(0);
 				$('#inbox_y').val(0);
+				element_container = null;
 			});
 
 			/**
