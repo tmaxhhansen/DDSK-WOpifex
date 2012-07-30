@@ -1,4 +1,8 @@
+var element_container = null;
+
 $(document).ready(
+		
+		
 		function() {
 			// start
 
@@ -74,7 +78,7 @@ $(document).ready(
 
 			});
 
-			var element_container = null;
+			
 
 			var tempElement = null;
 			$('#pad').droppable({
@@ -249,7 +253,17 @@ $(document).ready(
 						alert(errText);
 					}
 			});
-			
-			
 
 		});
+
+function fontChanger(){
+	try{
+	var list_value = document.getElementById("list_style")
+	element_container.style.fontFamily = list_value.options[list_style.selectedIndex].text;
+	}catch(err){
+		var errText = "You have not chosen a right element. \n You should choose an element on the canvas by clicking or dragging."
+		alert(errText);
+	}
+	alert(list_value.options[list_style.selectedIndex].text);
+}
+
