@@ -4,7 +4,11 @@ $(document).ready(function() {
 		cursor: 'move',
 		helper: 'clone',
         containment: "#pad", 
-		appendTo: "#pad" 
+		appendTo: "#pad",
+		start: function() {
+			   var dc =($(this).parent().attr("data-category"));
+			   ($(this).parent().attr("data-category", "recently " + dc));
+			   } 
 		
     });
 	
