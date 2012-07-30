@@ -1,5 +1,6 @@
 var element_container = null;
-
+var errText = "You have not chosen a right element. " +
+		"\n You should choose an element on the canvas by clicking or dragging.";
 $(document).ready(
 		
 		
@@ -129,7 +130,6 @@ $(document).ready(
 
 			var clicked_remove_circle = false;
 			$(".icon-remove-circle").click(function() {
-				// alert("Handler for .click() called.");
 				if (clicked_remove_circle) {
 					$('#whxy').show();
 					$('#palette_footer').show();
@@ -143,6 +143,10 @@ $(document).ready(
 
 			// remove button
 			$(".icon-remove").click(function() {
+				if(element_container == null){
+					alert(errText);
+				}
+				
 				$(element_container).remove();
 				$('#inbox_width').val(0);
 				$('#inbox_height').val(0);
@@ -157,6 +161,9 @@ $(document).ready(
 			 */
 			// change width
 			$("#inbox_width").click(function() {
+				if(element_container == null){
+					alert(errText);
+				}
 				var input_value = $('#inbox_width').val();
 				$(element_container).animate({
 					width : input_value
@@ -164,6 +171,9 @@ $(document).ready(
 			});
 			// change height
 			$("#inbox_height").click(function() {
+				if(element_container == null){
+					alert(errText);
+				}
 				var input_value = $('#inbox_height').val();
 				$(element_container).animate({
 					height : input_value
@@ -171,6 +181,9 @@ $(document).ready(
 			});
 			// change x-coordinate
 			$("#inbox_x").click(function() {
+				if(element_container == null){
+					alert(errText);
+				}
 				var input_value = $('#inbox_x').val();
 				$(element_container).animate({
 					left : input_value
@@ -178,6 +191,9 @@ $(document).ready(
 			});
 			// change y-coordinate
 			$("#inbox_y").click(function() {
+				if(element_container == null){
+					alert(errText);
+				}
 				var input_value = $('#inbox_y').val();
 				$(element_container).animate({
 					top : input_value
@@ -187,6 +203,9 @@ $(document).ready(
 			// lock button
 			$(".icon-lock").click(
 					function() {
+						if(element_container == null){
+							alert(errText);
+						}
 						var disabled = $(element_container).draggable("option",
 								"disabled");
 						if (disabled) {
@@ -211,7 +230,7 @@ $(document).ready(
 					element_container.style.fontWeight = "normal"
 				}
 				}catch(err){
-				var errText = "You have not chosen a right element. \n You should choose an element on the canvas by clicking or dragging."
+				
 				alert(errText);
 				}
 			});
@@ -224,7 +243,6 @@ $(document).ready(
 					element_container.style.fontStyle = "normal"
 				}
 				}catch(err){
-					var errText = "You have not chosen a right element. \n You should choose an element on the canvas by clicking or dragging."
 					alert(errText);
 				}
 			});
@@ -236,10 +254,9 @@ $(document).ready(
 					} else {
 						element_container.style.textDecoration = "none"
 					}
-					}catch(err){
-						var errText = "You have not chosen a right element. \n You should choose an element on the canvas by clicking or dragging."
-						alert(errText);
-					}
+				}catch(err){
+					alert(errText);
+				}
 			});
 			
 			$(".icon-strikethrough").click(function(){
@@ -249,10 +266,9 @@ $(document).ready(
 					} else {
 						element_container.style.textDecoration = "none"
 					}
-					}catch(err){
-						var errText = "You have not chosen a right element. \n You should choose an element on the canvas by clicking or dragging."
-						alert(errText);
-					}
+				}catch(err){
+					alert(errText);
+				}
 			});
 
 		});
@@ -262,7 +278,6 @@ function fontChanger(){
 	var list_value = document.getElementById("list_style")
 	element_container.style.fontFamily = list_value.options[list_style.selectedIndex].text;
 	}catch(err){
-		var errText = "You have not chosen a right element. \n You should choose an element on the canvas by clicking or dragging."
 		alert(errText);
 	}
 	//alert(list_value.options[list_style.selectedIndex].text);
