@@ -13,8 +13,7 @@ $(document).ready(function() {
 		
     });
 	
-	var id_container = null;
-	var class_container = null;
+	var element_container = null;
 	
 	var tempElement = null;
 	$('#pad').droppable({
@@ -31,17 +30,14 @@ $(document).ready(function() {
 				cursor: 'move',
 				containment: '#pad'                        
             }).resizable()
-            .click(function() {
-            	
+           /* .click(function()   
             	
             	//remove button 
             	var temp = this;
             	$(".icon-remove").click(function(){
-            		//alert(tempElement);
-            		//tempElement.remove();
             		$(temp).remove();
             	});      	            	
-            })
+            }) */
             .bind({            	
             	click: function() { 
             		var tempWidth = this.offsetWidth;
@@ -53,6 +49,7 @@ $(document).ready(function() {
                 	$('#inbox_height').val(tempHeight);
                 	$('#inbox_x').val(tempx);
                 	$('#inbox_y').val(tempy);
+                	element_container = this;
             	},            	
             	drag: function(){
             		var tempWidth = this.offsetWidth;
@@ -64,6 +61,7 @@ $(document).ready(function() {
                     $('#inbox_height').val(tempHeight);
                     $('#inbox_x').val(tempx);
                     $('#inbox_y').val(tempy);
+                    element_container = this;
             	}            	
             });
 		}
@@ -88,18 +86,8 @@ $(document).ready(function() {
 	});
 	
 	$(".icon-remove").click(function(){
-		/*//alert(tempElement);
-		//tempElement.remove();
-		var element = document.getElementById(tempElement);
-		.remove(element);*/
-	});
-	
-	function paletteController(element){
-		alert(element);
-		$(".icon-remove").click(function(){
-			alert(element);
-		});
-	}
+		$(element_container).remove();
+	});   
 	
 }); 
            
