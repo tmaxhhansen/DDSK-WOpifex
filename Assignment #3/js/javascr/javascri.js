@@ -264,6 +264,6 @@ function fontChanger(){
 		var errText = "You have not chosen a right element. \n You should choose an element on the canvas by clicking or dragging."
 		alert(errText);
 	}
-	alert(list_value.options[list_style.selectedIndex].text);
+	//alert(list_value.options[list_style.selectedIndex].text);
 }
 
