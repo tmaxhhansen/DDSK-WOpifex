@@ -172,6 +172,22 @@ $(document).ready(function() {
 	
 	
 	// lock button
+	$(".icon-lock").click(function(){
+		var disabled = $( element_container ).draggable( "option", "disabled" );		
+		if(disabled){
+			$(element_container).draggable({disabled:false});
+			disalbed = false;
+			alert('The chosen element is able to Move');
+		}else if(disabled == false){			
+			$(element_container).draggable({disabled: true});
+			disabled = true;
+			alert('The chosen element is inable to Move');
+		}
+	});
+	
+	$(".icon-bold").click(function(){
+		
+	})
 	
 	
 }); 
