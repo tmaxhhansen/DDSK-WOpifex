@@ -9,7 +9,18 @@ $(document).ready(function() {
 		start: function() {
 			   var dc =($(this).parent().attr("data-category"));
 			   ($(this).parent().attr("data-category", "recently " + dc));
-			   } 
+			   },
+	    stop: function(){
+	    	var tempWidth = this.offsetWidth;
+        	var tempHeight = this.offsetHeight;
+        	var tempoffset = $(this).offset();
+        	var tempx = tempoffset.left
+        	var tempy = tempoffset.top
+        	$('#inbox_width').val(tempWidth);
+        	$('#inbox_height').val(tempHeight);
+        	$('#inbox_x').val(tempx);
+        	$('#inbox_y').val(tempy);
+	    }
 		
     });
 	
@@ -30,21 +41,13 @@ $(document).ready(function() {
 				cursor: 'move',
 				containment: '#pad'                        
             }).resizable()
-           /* .click(function()   
-            	
-            	//remove button 
-            	var temp = this;
-            	$(".icon-remove").click(function(){
-            		$(temp).remove();
-            	});      	            	
-            }) */
             .bind({            	
             	click: function() { 
             		var tempWidth = this.offsetWidth;
                 	var tempHeight = this.offsetHeight;
                 	var tempoffset = $(this).offset();
-                	var tempx = tempoffset.left + tempWidth / 2;
-                	var tempy = tempoffset.top + tempHeight / 2;
+                	var tempx = tempoffset.left
+                	var tempy = tempoffset.top
                 	$('#inbox_width').val(tempWidth);
                 	$('#inbox_height').val(tempHeight);
                 	$('#inbox_x').val(tempx);
@@ -55,12 +58,12 @@ $(document).ready(function() {
             		var tempWidth = this.offsetWidth;
                 	var tempHeight = this.offsetHeight;
                 	var tempoffset = $(this).offset();
-                	var tempx = tempoffset.left + tempWidth / 2;
-                	var tempy = tempoffset.top + tempHeight / 2;
-            		$('#inbox_width').val(tempWidth);
-                    $('#inbox_height').val(tempHeight);
-                    $('#inbox_x').val(tempx);
-                    $('#inbox_y').val(tempy);
+                	var tempx = tempoffset.left
+                	var tempy = tempoffset.top
+                	$('#inbox_width').val(tempWidth);
+                	$('#inbox_height').val(tempHeight);
+                	$('#inbox_x').val(tempx);
+                	$('#inbox_y').val(tempy);
                     element_container = this;
             	}            	
             });
@@ -69,6 +72,7 @@ $(document).ready(function() {
 	
 	
 	/*** Palette Control functions ***/
+	/*** The user should either click or drag to put focus on an element ***/
 	$('#palette').draggable();	
 	
 	var clicked_remove_circle = false;
@@ -85,9 +89,49 @@ $(document).ready(function() {
 		}		
 	});
 	
+	//remove button 
 	$(".icon-remove").click(function(){
 		$(element_container).remove();
-	});   
+		$('#inbox_width').val(0);
+        $('#inbox_height').val(0);
+        $('#inbox_x').val(0);
+        $('#inbox_y').val(0);
+	});
+	
+	
+	/*** The user should click an up or down arrow on the palette to apply the size.***/	
+	// change width
+	$("#inbox_width").click(function(){
+		var input_value = $('#inbox_width').val();		
+		$(element_container).animate({
+			width : input_value
+		});
+	});	
+	//change height
+	$("#inbox_height").click(function(){
+		var input_value = $('#inbox_height').val();		
+		$(element_container).animate({
+			height : input_value
+		});
+	});	
+	//change x-coordinate
+	$("#inbox_x").click(function(){
+		var input_value = $('#inbox_x').val();		
+		$(element_container).animate({
+			left : input_value
+		});
+	});	
+	//change y-coordinate
+	$("#inbox_y").click(function(){
+		var input_value = $('#inbox_y').val();		
+		$(element_container).animate({
+			top : input_value
+		});
+	});
+	
+	
+	// lock button
+	
 	
 }); 
            
