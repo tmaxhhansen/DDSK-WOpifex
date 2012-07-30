@@ -144,6 +144,10 @@ $(document).ready(function() {
 		}
 	});
 	
+	$(".icon-bold").click(function(){
+		
+	})
+	
 	
 }); 
            
