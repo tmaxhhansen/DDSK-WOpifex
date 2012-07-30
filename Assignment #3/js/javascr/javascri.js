@@ -1,5 +1,6 @@
 $(document).ready(function() {    
 //start     
+	var counter = 0;
 	$('.uidraggable').draggable({
 		cursor: 'move',
 		helper: 'clone',
@@ -20,8 +21,8 @@ $(document).ready(function() {
         accept: '.uidraggable',
         drop: function(event, ui){		
 			var elem = $(ui.helper).clone();
-			var n = $(elem).attr('class');
-			//alert(n);
+			counter++;
+			elem.attr("id", "id" + counter);
 			$(this).append($(elem));
 			$(elem).addClass("item");
             $(".item").removeClass("ui-draggable");
