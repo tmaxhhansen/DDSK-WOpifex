@@ -6,6 +6,8 @@
 	<title>Wireframe 3000&#8482;</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" href="fa/font-awesome.css" type="text/css" />
+	<link rel="stylesheet" type="text/css" 
+href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
 	<!--[if IE 7]>
 	  <link rel="stylesheet" href="fa/font-awesome-ie7.css">
 	<![endif]-->
@@ -13,6 +15,7 @@
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<script type = "text/javascript" src="js/lib/jquery-1.7.2.min.js"></script>
+	
 	<!--qtip script-->
 	<script type = "text/javascript" src="js/qtip/jquery.qtip.min.js"></script>
 	<script type = "text/javascript" src="js/script.js"></script>
@@ -98,7 +101,7 @@
 					</fieldset>
                 </div>
 			</form>
-			<footer>
+			<footer id= "palette_footer">
 				<span>Options:</span>
 				<ul>
 					<li class="pointer selected" data-category="coord">Coordinates</li>
@@ -137,14 +140,18 @@
 			</section>
 			<section id="elements">
 				<div id="elementContainer">
+				
+				
 					<div class="draggable element1">
-						<div class="resizeable" data-default-width="108" data-default-height="20" data-category="all button">
+						<div class="resizeable" data-default-width="108" data-default-height="20" data-category="all button">                        	
                         	<div id="sbtn" class="uidraggable" data-lib-width="108" data-lib-height="20">
                         		<span class="sbtntext">Button Text</span>
-                            </div> 
+                            </div>                             
                             <div class="title">Button</div>
                         </div>	
 					</div>
+					
+					
 					<div class="draggable element1">
 						<div class="resizeable" data-default-width="760" data-default-height="350" data-category="all device">
                             	<div id="libBrowserOuterFrame" class="uidraggable" data-lib-width="760" data-lib-height="350">

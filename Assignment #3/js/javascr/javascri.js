@@ -9,8 +9,7 @@ $(document).ready(function() {
     });
 	$('#pad').droppable({
         accept: '.uidraggable',
-        drop: function(event, ui){
-		
+        drop: function(event, ui){		
 			var elem = $(ui.helper).clone();
 			var n = $(elem).attr('class');
 			//alert(n);
@@ -20,10 +19,32 @@ $(document).ready(function() {
 			$(".item").removeClass("uidraggable");
             $(".item").draggable({
 				cursor: 'move',
-				containment: '#pad'
-                        
-                });
+				containment: '#pad'                        
+            }).resizable();            
 		}
 	});
+	
+	$('#palette').draggable({		
+	});
+	
+
+	
+	var clicked_remove_circle = false;
+	$(".icon-remove-circle").click(function() {
+		//  alert("Handler for .click() called.");
+		//$('#palette').hide();
+		
+		if(clicked_remove_circle){
+			$('#whxy').show();
+			$('#palette_footer').show();
+			clicked_remove_circle = false;
+		}else{			
+			$('#whxy').hide();
+			$('#palette_footer').hide();
+			clicked_remove_circle = true;	
+		}		
+	});
+	
+	
 }); 
            

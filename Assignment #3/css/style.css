@@ -370,6 +370,8 @@ section#canvas > section#pad{
 #libDummyContainer{
     width: 250px;
 	height: 110px;
+	border-style: solid;
+	border-width:3px;
 }
 #libDummyText{
 	width: 100%;
