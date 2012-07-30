@@ -40,29 +40,32 @@ $(document).ready(function() {
             		//alert(tempElement);
             		//tempElement.remove();
             		$(temp).remove();
-            	});
-            	
-            	
-            	//	paletteController(this);
-            /*	alert(this);
-            	tempElement = this;
-            	id_contatiner = $(this).attr('id');
-            	class_conatiner = $(this).attr('class');
-            	
-            	alert(id_contatiner + ' ahah ' + class_conatiner);
-            	//$(this).focus();            	
-            	
-            	var current_id = $(this).attr('id');
-            	current_id = current_id + '-babo';
-            	alert(id_container + ' and ' + current_id);
-            	
-            	if(id_container != current_id){
-            		//alert("Handler for .click() called.");
-                	//$(this).removeClass("item").addClass("clicked_item");
-            		$(this).focus();
-            		alert($(this).hasfocus);
-            	}*/            	            	            	
-            });            
+            	});      	            	
+            })
+            .bind({            	
+            	click: function() { 
+            		var tempWidth = this.offsetWidth;
+                	var tempHeight = this.offsetHeight;
+                	var tempoffset = $(this).offset();
+                	var tempx = tempoffset.left + tempWidth / 2;
+                	var tempy = tempoffset.top + tempHeight / 2;
+                	$('#inbox_width').val(tempWidth);
+                	$('#inbox_height').val(tempHeight);
+                	$('#inbox_x').val(tempx);
+                	$('#inbox_y').val(tempy);
+            	},            	
+            	drag: function(){
+            		var tempWidth = this.offsetWidth;
+                	var tempHeight = this.offsetHeight;
+                	var tempoffset = $(this).offset();
+                	var tempx = tempoffset.left + tempWidth / 2;
+                	var tempy = tempoffset.top + tempHeight / 2;
+            		$('#inbox_width').val(tempWidth);
+                    $('#inbox_height').val(tempHeight);
+                    $('#inbox_x').val(tempx);
+                    $('#inbox_y').val(tempy);
+            	}            	
+            });
 		}
 	});
 	
