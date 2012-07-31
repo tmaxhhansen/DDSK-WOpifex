@@ -179,6 +179,16 @@ section#canvas > section#pad{
 	float:right;
 }
 
+/* Auto Complete list results */
+ul.ui-autocomplete.ui-menu{
+	background: white;
+	list-style-type:none;
+	overflow:scroll;
+	maxlength=30;
+	scrollable:true;
+	width:100px;
+	height: 150px;
+}
 /* Menu Bar */
 
 #logo {

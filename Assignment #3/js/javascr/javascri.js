@@ -6,10 +6,10 @@ $(document).ready(
 		
 		function() {
 			// start
-
+			var elem;
 			$(".uidraggable").click(function() {
 				// alert("click");
-				var elem;
+				
 				if ($(this).hasClass(".item")) {
 					elem = $(this).removeClass("uidraggable").draggable();
 					$(this).unbind('click').removeClass("uidraggable");
@@ -30,6 +30,8 @@ $(document).ready(
 						top : y
 					}).appendTo('#pad');
 					$(this).unbind('dblclick');
+					var dc = ($(elem).parent().attr("data-category"));
+					($(elem).parent().attr("data-category", "recently " + dc));
 				});
 			});
 
