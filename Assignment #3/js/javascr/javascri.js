@@ -270,6 +270,173 @@ $(document).ready(
 					alert(errText);
 				}
 			});
+			
+			
+			$(function() {
+				var availableTags = [
+					"Button",
+					"Browser",
+					"Image",
+					"Textfield",
+					"Button Bar",
+					"Search",
+					"Section Title",
+					"Checkbox",
+					"Radio Button",
+					"Combobox",
+					"Accordin",
+					"Tab Bar",
+					"Link Bar",
+					"Vertical Tab",
+					"Table",
+					"Format Bar",
+					"Menu",
+					"Text Box",
+					"Date Picker",
+					"List",
+					"Date Stepper"
+					
+				];
+				$("#sbox").autocomplete({
+					source: availableTags,
+					autoFocus: true
+				});
+			}); 
+			   
+			var toInsert;    
+			$("#sbox").keyup(function(event){
+		    if(event.keyCode == 13){
+		        toInsert = ($("#sbox").val());
+				//alert(toInsert);
+				}
+				if(toInsert == "Button")
+				{
+					$('#sbtn').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Browser")
+				{
+					$('#libBrowserOuterFrame').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Image")
+				{
+					$('#libImage').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Textfield")
+				{
+					$('#libDummyContainer').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Button Bar")
+				{
+					$('#libButtonBarBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Search")
+				{
+					$('#libSearchBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Section Title")
+				{
+					$('#libHeaderBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Checkbox")
+				{
+					$('#libCheckBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Radio Button")
+				{
+					$('#libRadioBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "libComboBox")
+				{
+					$('#Combobox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Accordin")
+				{
+					$('#libAccordin').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Tab Bar")
+				{
+					$('#libTabbar').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Link Bar")
+				{
+					$('#libLinkbar').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Vertical Tab")
+				{
+					$('#libVerticalTab').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Table")
+				{
+					$('#libTable').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Format Bar")
+				{
+					$('#libFormatBar').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Menu")
+				{
+					$('#libMenu').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Text Box")
+				{
+					$('#libTextBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Date Picker")
+				{
+					$('#libDatePickerBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "List")
+				{
+					$('#libList').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				if(toInsert == "Date Stepper")
+				{
+					$('#libNumStepper').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					toInsert = "";
+					$("#sbox").val("");
+				}
+				
+		    });
 
 		});
 
