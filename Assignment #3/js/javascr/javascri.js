@@ -6,7 +6,7 @@ $(document).ready(
 		
 		function() {
 			// start
-			var elem;
+
 			$(".uidraggable").click(function() {
 				// alert("click");
 				
@@ -16,6 +16,7 @@ $(document).ready(
 					$(elem).unbind('click').removeClass("uidraggable");
 				}
 				if (!($(this).hasClass(".item"))) {
+					beforeClone = $(this);
 					elem = $(this).clone().removeClass("uidraggable");
 					$(elem).addClass("item").draggable();
 					$(this).unbind('click');
@@ -30,8 +31,8 @@ $(document).ready(
 						top : y
 					}).appendTo('#pad');
 					$(this).unbind('dblclick');
-					var dc = ($(elem).parent().attr("data-category"));
-					($(elem).parent().attr("data-category", "recently " + dc));
+					var dc = ($(beforeClone).parent().attr("data-category"));
+					($(beforeClone).parent().attr("data-category", "recently " + dc));
 				});
 			});
 
@@ -308,132 +309,172 @@ $(document).ready(
 			var toInsert;    
 			$("#sbox").keyup(function(event){
 		    if(event.keyCode == 13){
-		        toInsert = ($("#sbox").val());
+		    	toInsert = ($('.ui-autocomplete li:first-child').text());
 				//alert(toInsert);
 				}
 				if(toInsert == "Button")
 				{
-					$('#sbtn').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#sbtn').clone().appendTo('#pad').addClass("drag1").attr("id", "sbtn1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#sbtn').parent().attr("data-category");
+					$('#sbtn').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Browser")
 				{
-					$('#libBrowserOuterFrame').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libBrowserOuterFrame').clone().appendTo('#pad').addClass("drag2").attr("id", "libBrowserOuterFrame1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libBrowserOuterFrame').parent().attr("data-category");
+					$('#libBrowserOuterFrame').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Image")
 				{
-					$('#libImage').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libImage').clone().appendTo('#pad').addClass("drag3").attr("id", "libImage1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libImage').parent().attr("data-category");
+					$('#libImage').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Textfield")
 				{
-					$('#libDummyContainer').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libDummyContainer').clone().appendTo('#pad').addClass("drag4").attr("id", "libDummyContainer1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libDummyContainer').parent().attr("data-category");
+					$('#libDummyContainer').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Button Bar")
 				{
-					$('#libButtonBarBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libButtonBarBox').clone().appendTo('#pad').addClass("drag5").attr("id", "libButtonBarBox1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libButtonBarBox').parent().attr("data-category");
+					$('#libButtonBarBox').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Search")
 				{
-					$('#libSearchBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libSearchBox').clone().appendTo('#pad').addClass("drag6").attr("id", "libSearchBox1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libSearchBox').parent().attr("data-category");
+					$('#libSearchBox').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Section Title")
 				{
-					$('#libHeaderBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libHeaderBox').clone().appendTo('#pad').addClass("drag7").attr("id", "libHeaderBox1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libHeaderBox').parent().attr("data-category");
+					$('#libHeaderBox').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Checkbox")
 				{
-					$('#libCheckBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libCheckBox').clone().appendTo('#pad').addClass("drag8").attr("id", "libCheckBox1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libCheckBox').parent().attr("data-category");
+					$('#libCheckBox').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Radio Button")
 				{
-					$('#libRadioBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libRadioBox').clone().appendTo('#pad').addClass("drag9").attr("id", "libRadioBox1").removeClass("uidraggable").addClass("item").draggable();
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Combobox")
 				{
-					$('#libComboBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libComboBox').clone().appendTo('#pad').addClass("drag10").attr("id", "libComboBox1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libComboBox').parent().attr("data-category");
+					$('#libComboBox').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Accordin")
 				{
-					$('#libAccordin').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libAccordin').clone().appendTo('#pad').addClass("drag11").attr("id", "libAccordin1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libAccordin').parent().attr("data-category");
+					$('#libAccordin').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Tab Bar")
 				{
-					$('#libTabbar').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libTabbar').clone().appendTo('#pad').addClass("drag12").attr("id", "libTabbar1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libTabbar').parent().attr("data-category");
+					$('#libTabbar').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Link Bar")
 				{
-					$('#libLinkbar').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libLinkbar').clone().appendTo('#pad').addClass("drag13").attr("id", "libLinkbar1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libLinkbar').parent().attr("data-category");
+					$('#libLinkbar').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Vertical Tab")
 				{
-					$('#libVerticalTab').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libVerticalTab').clone().appendTo('#pad').addClass("drag14").attr("id", "libVerticalTab1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libVerticalTab').parent().attr("data-category");
+					$('#libVerticalTab').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Table")
 				{
-					$('#libTable').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libTable').clone().appendTo('#pad').addClass("drag15").attr("id", "libTable1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libTable').parent().attr("data-category");
+					$('#libTable').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Format Bar")
 				{
-					$('#libFormatBar').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libFormatBar').clone().appendTo('#pad').addClass("drag16").attr("id", "libFormatBar1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libFormatBar').parent().attr("data-category");
+					$('#libFormatBar').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Menu")
 				{
-					$('#libMenu').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libMenu').clone().appendTo('#pad').addClass("drag17").attr("id", "libMenu1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libMenu').parent().attr("data-category");
+					$('#libMenu').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Text Box")
 				{
-					$('#libTextBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libTextBox').clone().appendTo('#pad').addClass("drag18").attr("id", "libTextBox1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libTextBox').parent().attr("data-category");
+					$('#libTextBox').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Date Picker")
 				{
-					$('#libDatePickerBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libDatePickerBox').clone().appendTo('#pad').addClass("drag19").attr("id", "libDatePickerBox1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libDatePickerBox').parent().attr("data-category");
+					$('#libDatePickerBox').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "List")
 				{
-					$('#libList').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libList').clone().appendTo('#pad').addClass("drag20").attr("id", "libList1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libList').parent().attr("data-category");
+					$('#libList').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
 				if(toInsert == "Date Stepper")
 				{
-					$('#libNumStepper').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libNumStepper').clone().appendTo('#pad').addClass("drag21").attr("id", "libNumStepper1").removeClass("uidraggable").addClass("item").draggable();
+					var dc = $('#libNumStepper').parent().attr("data-category");
+					$('#libNumStepper').parent().attr("data-category", "recently " + dc);
 					toInsert = "";
 					$("#sbox").val("");
 				}
@@ -449,5 +490,6 @@ function fontChanger(){
 	}catch(err){
 		alert(errText);
 	}
+	
 }
 

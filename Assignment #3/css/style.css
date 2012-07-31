@@ -1101,6 +1101,7 @@ ul#css3menu1>li:nth-child(3){
 .filemenuitem{
 	padding-left: 4px;
 }
+.ui-autocomplete li:first-child { background-color: #10c6ba; }
 
 /*qtip*/
 .ui-tooltip,.qtip{position:absolute;left:-28000px;top:-28000px;display:none;max-width:280px;min-width:50px;font-size:10.5px;line-height:12px;border-style:solid;border-width:1px}
