@@ -363,9 +363,9 @@ $(document).ready(
 					toInsert = "";
 					$("#sbox").val("");
 				}
-				if(toInsert == "libComboBox")
+				if(toInsert == "Combobox")
 				{
-					$('#Combobox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
+					$('#libComboBox').clone().appendTo('#pad').removeClass("uidraggable").addClass("item").draggable();
 					toInsert = "";
 					$("#sbox").val("");
 				}
