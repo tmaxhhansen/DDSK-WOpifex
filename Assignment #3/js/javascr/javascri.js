@@ -449,6 +449,5 @@ function fontChanger(){
 	}catch(err){
 		alert(errText);
 	}
-	//alert(list_value.options[list_style.selectedIndex].text);
 }
 
